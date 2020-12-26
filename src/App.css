@@ -1,38 +1,41 @@
-.App {
+@font-face {
+  font-family: "Mortal Kombat";
+  src: url(./assets/Mortal-Kombat-MK11.otf);
+}
+
+body {
+  font-family: "Mortal Kombat", sans-serif;
+  background-color: #000;
+  color: #fdb124;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.cityChoose {
+  font-size: 48px;
+}
+
+hr {
+  background-color: #fdb124;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  text-align: center;
 }
