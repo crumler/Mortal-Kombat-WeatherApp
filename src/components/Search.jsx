@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import fetchWeather from "../api/fetchWeather";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from '@material-ui/icons/Search';
 
 const Search = () => {
   let [displayResults, setDisplayResults] = useState(false);
@@ -15,6 +17,44 @@ const Search = () => {
   let [windGust, setWindGust] = useState("");
   let [windDirection, setWindDirection] = useState("");
   let [name, setName] = useState("");
+  let [country, setCountry] = useState("");
+
+  function getWindDirection(deg) {
+    if (deg >= 11.25 && windDirection <= 33.75) {
+      return "NNE";
+    } else if (deg >= 33.76 && windDirection <= 56.25) {
+      return "NE";
+    } else if (deg >= 56.26 && windDirection <= 78.75) {
+      return "ENE";
+    } else if (deg >= 78.76 && windDirection <= 101.25) {
+      return "E";
+    } else if (deg >= 101.26 && windDirection <= 123.75) {
+      return "ESE";
+    } else if (deg >= 123.76 && windDirection <= 146.25) {
+      return "SE";
+    } else if (deg >= 146.26 && windDirection <= 168.75) {
+      return "SSE";
+    } else if (deg >= 168.76 && windDirection <= 191.25) {
+      return "S";
+    } else if (deg >= 191.26 && windDirection <= 213.75) {
+      return "SSW";
+    } else if (deg >= 213.76 && windDirection <= 236.25) {
+      return "SW";
+    } else if (deg >= 236.26 && windDirection <= 258.75) {
+      return "WSW";
+    } else if (deg >= 258.76 && windDirection <= 281.25) {
+      return "W";
+    } else if (deg >= 281.26 && windDirection <= 303.75) {
+      return "WNW";
+    } else if (deg >= 303.76 && windDirection <= 326.25) {
+      return "NW";
+    } else if (deg >= 326.26 && windDirection <= 348.75) {
+      return "NNW";
+    } else {
+      return "N";
+    }
+  };
+
 
   const useStyles = makeStyles((theme) => ({
     button: {
@@ -27,8 +67,8 @@ const Search = () => {
     },
     root: {
       "& > *": {
+        display: 'flex',
         margin: theme.spacing(1),
-        // width: "25ch",
       },
       input: {
         color: "white",
@@ -77,6 +117,8 @@ const Search = () => {
       setWindGust(data.wind.gust);
       setWindDirection(data.wind.deg);
       setName(data.name);
+      setCountry(data.sys.country);
+      setWindDirection(getWindDirection(data.wind.deg));
       setQuery("");
     }
   };
@@ -86,15 +128,7 @@ const Search = () => {
   return (
     <div>
       <h1 className="cityChoose">CHOOSE YOUR CITY:</h1>
-      {/* <input
-        type="text"
-        className="search"
-        placeholder="Search..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        onKeyPress={weatherSearch}
-      /> */}
-      {/* <form className={classes.root} noValidate autoComplete="off"> */}
+      
       <TextField
         id="outlined-basic"
         label="Enter City"
@@ -106,23 +140,25 @@ const Search = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={weatherSearch}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start" style={{color: "#FDB124"}}>
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
       />
+      
       {displayResults ? null : <h4>Example: Chicago, IL, US</h4>}
-      {/* <Button
-          className={classes.button}
-          variant="contained"
-          color="primary"
-          onClick={weatherSearch}
-        >
-          Search
-        </Button> */}
-      {/* </form> */}
+
       {displayResults ? (
         <>
-          <h1>The current weather in {name} is:</h1>
+          <h1>The current weather in {name}, {country} is:</h1>
 
           <span>
             <div>
+              {description}
+              <br />
               <img
                 src={"http://openweathermap.org/img/wn/" + iconID + "@2x.png"}
               />
