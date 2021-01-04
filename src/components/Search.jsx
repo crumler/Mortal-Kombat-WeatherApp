@@ -8,10 +8,8 @@ import SearchIcon from '@material-ui/icons/Search';
 const Search = () => {
   let [displayResults, setDisplayResults] = useState(false);
   let [query, setQuery] = useState("");
-  let [feelsLike, setFeelsLike] = useState(0);
   let [mainTemp, setMainTemp] = useState(0);
   let [description, setDescription] = useState("");
-  let [main, setMain] = useState("");
   let [iconID, setIconID] = useState("");
   let [windSpeed, setWindSpeed] = useState("");
   let [windGust, setWindGust] = useState("");
@@ -108,10 +106,8 @@ const Search = () => {
     if (e.key === "Enter") {
       const data = await fetchWeather(query);
       setDisplayResults(true);
-      setFeelsLike(data.main.feels_like);
       setMainTemp(data.main.temp);
       setDescription(data.weather[0].description);
-      setMain(data.weather[0].main);
       setIconID(data.weather[0].icon);
       setWindSpeed(data.wind.speed);
       setWindGust(data.wind.gust);
@@ -159,9 +155,7 @@ const Search = () => {
             <div>
               {description}
               <br />
-              <img
-                src={"http://openweathermap.org/img/wn/" + iconID + "@2x.png"}
-              />
+              <img src={"http://openweathermap.org/img/wn/" + iconID + "@2x.png"} alt="Icon of Current Weather" />
             </div>
             <h2>Temperature:</h2>
             <br />
