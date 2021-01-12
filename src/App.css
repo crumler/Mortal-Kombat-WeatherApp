@@ -3,20 +3,24 @@
   src: url(./assets/Mortal-Kombat-MK11.otf);
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: "Mortal Kombat", sans-serif;
   background-color: #000;
   color: #fdb124;
 }
 
-h2 {
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   display: grid;
   max-width: 1750px;
+}
+
+.container div {
+  margin: 5px;
 }
 
 .cityChoose {
