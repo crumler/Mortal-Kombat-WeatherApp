@@ -14,8 +14,22 @@ h2 {
   padding: 0;
 }
 
+.container {
+  display: grid;
+  max-width: 1750px;
+}
+
 .cityChoose {
   font-size: 4rem;
+}
+
+.temperature {
+  font-size: 48px;
+}
+
+.description {
+  font-size: 36px;
+  text-align: center;
 }
 
 hr {
