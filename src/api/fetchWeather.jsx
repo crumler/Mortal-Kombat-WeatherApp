@@ -22,6 +22,4 @@ const fetchWeather = async (query) => {
     };
 
 
-
-
 export default fetchWeather;

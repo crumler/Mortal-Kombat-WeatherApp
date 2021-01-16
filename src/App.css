@@ -6,17 +6,67 @@
 * {
   padding: 0;
   margin: 0;
+  word-break: break-all;
 }
 
 body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   font-family: "Mortal Kombat", sans-serif;
+  font-size: 20px;
   background-color: #000;
   color: #fdb124;
 }
 
-.container {
-  display: grid;
+hr {border: 2px solid #fdb124;}
+
+.container,
+.weatherData {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   max-width: 1750px;
+}
+
+.weatherData,
+.windData {
+  max-width: 900px;
+  /* border: 5px solid rgba(253, 177, 36, 0.363); */
+  margin: 40px auto;
+}
+
+.temperatureContainer,
+.windData {
+  display: flex;
+}
+
+.temperature_label{
+  font-size: 140%;
+  padding: 10px;
+  align-self: center;
+}
+
+.temperature_Fa,
+.temperature_Ce {
+  font-size: 300%;
+  align-self: center;
+}
+
+.temperature_Fa {
+  padding: 10px;
+  border-right: 5px solid rgba(253, 177, 36, 0.363);
+}
+
+.temperature_Ce {
+  padding: 10px;
+}
+
+.windDirection,
+.windSpeed,
+.windGusts {
+  padding: 10px;
+  font-size: 200%;
 }
 
 .container div {
@@ -24,7 +74,7 @@ body {
 }
 
 .cityChoose {
-  font-size: 4rem;
+  font-size: 400%;
 }
 
 .temperature {
@@ -32,8 +82,9 @@ body {
 }
 
 .description {
-  font-size: 36px;
+  font-size: 150%;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 hr {
