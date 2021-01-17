@@ -9,31 +9,71 @@
 }
 
 body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   font-family: "Mortal Kombat", sans-serif;
+  font-size: 20px;
   background-color: #000;
   color: #fdb124;
 }
 
-.container {
-  display: grid;
+hr {border: 5px solid rgba(253, 177, 36, 0.363);}
+
+.currentWeather {margin-top: 20px;}
+
+.container,
+.weatherData {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   max-width: 1750px;
 }
 
-.container div {
-  margin: 5px;
+.weatherData,
+.windData {
+  max-width: 900px;
+  /* border: 5px solid rgba(253, 177, 36, 0.363); */
+  margin-top: 55px;
 }
 
-.cityChoose {
-  font-size: 4rem;
+.temperatureContainer,
+.windData {display: flex;}
+
+.temperature_label{
+  font-size: 140%;
+  padding: 10px;
+  align-self: center;
 }
 
-.temperature {
-  font-size: 48px;
+.temperature_Fa,
+.temperature_Ce {
+  font-size: 300%;
+  align-self: center;
+  padding: 0 30px;
 }
+
+.temperature_Fa {border-right: 5px solid rgba(253, 177, 36, 0.363);}
+
+
+.windDirection,
+.windSpeed,
+.windGusts {
+  padding: 10px;
+  margin: 0 20px;
+  font-size: 200%;
+}
+
+.container div {margin: 5px;}
+
+.cityChoose {font-size: 400%;}
+
+.temperature {font-size: 48px;}
 
 .description {
-  font-size: 36px;
+  font-size: 150%;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 hr {
@@ -50,10 +90,6 @@ hr {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
-}
+ul {list-style-type: none;}
 
-.App {
-  text-align: center;
-}
+.App {text-align: center;}
