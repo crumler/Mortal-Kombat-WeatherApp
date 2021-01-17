@@ -53,7 +53,6 @@ const Search = () => {
     }
   };
 
-
   const useStyles = makeStyles((theme) => ({
     button: {
       backgroundColor: "#FDB124",
@@ -66,7 +65,7 @@ const Search = () => {
     root: {
       "& > *": {
         display: 'flex',
-        margin: theme.spacing(1),
+        margin: theme.spacing(.2),
       },
       input: {
         color: "white",
@@ -148,14 +147,13 @@ const Search = () => {
         }}
       />
       
-      
       {displayResults ? null : <h4>Example: Chicago, IL, US</h4>}
       </div>
       </container>
 
       {displayResults ? (
         <>
-          <h1>The current weather in {name}, {country} is:</h1>
+          <h1 className="currentWeather">The current weather in {name}, {country} is:</h1>
 
           <div className="description">
               <img src={"http://openweathermap.org/img/wn/" + iconID + "@2x.png"} alt="Icon of Current Weather" />
@@ -165,9 +163,6 @@ const Search = () => {
 
           <container className="weatherData">
             <div className="temperatureContainer">
-            {/* <div className="temperature_label">
-              <h2>Temperature:</h2>
-            </div> */}
 
             <div className="temperature_Fa">
               {(mainTemp * 1.8 + 32).toFixed(1)} &deg;F
@@ -177,11 +172,9 @@ const Search = () => {
               {mainTemp.toFixed(1)}{" "}&deg;C
             </div>
             </div>
-
           </container>
 
           <container className="windData">
-            
             <div className="windDirection">
               Wind Direction:
               <hr />
@@ -199,7 +192,6 @@ const Search = () => {
               <hr />
               {windGust} MPH
             </div>
-            
           </container>
         </>
       ) : null}
