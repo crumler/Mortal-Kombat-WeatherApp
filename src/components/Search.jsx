@@ -91,12 +91,13 @@ const Search = () => {
       "& .MuiOutlinedInput-root": {
         "& fieldset": {
           borderColor: "#FDB124",
+          width: "260px"
         },
         "&:hover fieldset": {
-          borderColor: "#FDB124",
+          borderColor: "#FDB124"
         },
         "&.Mui-focused fieldset": {
-          borderColor: "#FDB124",
+          borderColor: "#FDB124"
         },
       },
     },
@@ -123,7 +124,9 @@ const Search = () => {
 
   return (
     <div>
-      <h1 className="cityChoose">CHOOSE YOUR CITY:</h1>
+      <container className="container">
+        <div>
+      <h1 className="cityChoose">Choose your city:</h1>
       
       <TextField
         id="outlined-basic"
@@ -145,31 +148,39 @@ const Search = () => {
         }}
       />
       
+      
       {displayResults ? null : <h4>Example: Chicago, IL, US</h4>}
+      </div>
+      </container>
 
       {displayResults ? (
         <>
-          <h1>The current weather in {name}, {country} is:</h1>
+          
 
-          <span>
+          <container className="container">
+          <h1>The current weather in {name}, {country} is:</h1>
             <div>
-              {description}
-              <br />
-              <img src={"http://openweathermap.org/img/wn/" + iconID + "@2x.png"} alt="Icon of Current Weather" />
-            </div>
-            <h2>Temperature:</h2>
-            <br />
-            <div>
-              {(mainTemp * 1.8 + 32).toFixed(1)} &deg;F / {mainTemp.toFixed(1)}{" "}
+
+              <div className="temperature">
+              {(mainTemp * 1.8 + 32).toFixed(1)} &deg;F <br /> {mainTemp.toFixed(1)}{" "}
               &deg;C
             </div>
-            <br />
-            <br />
+
+              <br />
+              <div className="description">
+                <img src={"http://openweathermap.org/img/wn/" + iconID + "@2x.png"} alt="Icon of Current Weather" />
+                <br />
+                {description}
+              </div>
+              <br />
+
+            </div>
+
             <h2>Winds:</h2>
             <div>Wind Direction: {windDirection}</div>
             <div>Wind Speed: {windSpeed} MPH</div>
             <div>Wind Gusts: {windGust} MPH</div>
-          </span>
+          </container>
         </>
       ) : null}
     </div>
