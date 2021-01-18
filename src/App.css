@@ -38,7 +38,10 @@ hr {border: 5px solid rgba(253, 177, 36, 0.363);}
 }
 
 .temperatureContainer,
-.windData {display: flex;}
+.windData {
+  display: flex;
+  justify-content: center;
+}
 
 .temperature_label{
   font-size: 140%;
