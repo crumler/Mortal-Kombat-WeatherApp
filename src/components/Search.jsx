@@ -155,10 +155,13 @@ const Search = () => {
         <>
           <h1 className="currentWeather">The current weather in {name}, {country} is:</h1>
 
-          <div className="description">
+          <div className="descriptionContainer">
+            <div className="description_icon">
               <img src={"http://openweathermap.org/img/wn/" + iconID + "@2x.png"} alt="Icon of Current Weather" />
-              <br />
+            </div>
+            <div className="description_label">
               {description}
+            </div>
           </div>
 
           <container className="weatherData">

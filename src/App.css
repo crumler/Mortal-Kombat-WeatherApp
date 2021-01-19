@@ -30,23 +30,25 @@ hr {border: 5px solid rgba(253, 177, 36, 0.363);}
   max-width: 1750px;
 }
 
+.descriptionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.description_label {font-size: 150%;}
+
 .weatherData,
 .windData {
   max-width: 900px;
-  /* border: 5px solid rgba(253, 177, 36, 0.363); */
-  margin-top: 55px;
+  margin-top: 20px;
 }
 
 .temperatureContainer,
 .windData {
   display: flex;
   justify-content: center;
-}
-
-.temperature_label{
-  font-size: 140%;
-  padding: 10px;
-  align-self: center;
 }
 
 .temperature_Fa,
@@ -58,12 +60,10 @@ hr {border: 5px solid rgba(253, 177, 36, 0.363);}
 
 .temperature_Fa {border-right: 5px solid rgba(253, 177, 36, 0.363);}
 
-
 .windDirection,
 .windSpeed,
 .windGusts {
-  padding: 10px;
-  margin: 0 20px;
+  margin: 25px 20px;
   font-size: 200%;
 }
 
@@ -85,12 +85,13 @@ hr {
   margin-bottom: .5rem;
 }
 
-.Footer {
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
+  font-size: 60%;
 }
 
 ul {list-style-type: none;}
