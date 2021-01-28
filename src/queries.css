@@ -7,7 +7,7 @@
     }
 
     .footer{font-size: 100%;}
- }
+}
 
 
 @media all and (min-height: 578px) and (max-height: 768px) {
@@ -38,9 +38,7 @@
         margin-bottom: 10px;
     }
 
-    .currentWeather {
-        font-size: 130%;
-    }
+    .currentWeather {font-size: 130%;}
 
     .windDirection,
     .windSpeed,
